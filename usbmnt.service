@@ -1,0 +1,15 @@
+[Unit]
+Description=Auto mount usb devices in embedded systes using polling
+After=network-online.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+WorkingDirectory=/opt/usbmount
+ExecStart=/opt/usbmount/usbmount
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
